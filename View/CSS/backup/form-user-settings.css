@@ -1,0 +1,71 @@
+/* Стилове за контейнера на настройките */
+
+.form-user-settings {
+    max-width: 600px;
+    /* Максимална ширина на контейнера */
+    margin: 20px auto;
+    /* Центриране на контейнера */
+    padding: 20px;
+    /* Вътрешно отстояние */
+    background-color: #f9f9f9;
+    /* Светлосив фон */
+    border: 2px solid #0099cc;
+    /* Синя рамка за уникалност */
+    border-radius: 10px;
+    /* Заоблени ъгли */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    /* Лека сянка */
+}
+
+
+/* Стилове за заглавията на формата */
+
+.form-user-settings li {
+    list-style-type: none;
+    /* Премахване на точки от списъка */
+    margin-bottom: 10px;
+    /* Разстояние между елементите */
+}
+
+
+/* Стилове за input полетата */
+
+.form-user-settings input[type="text"] {
+    width: 100%;
+    /* Ширина на 100% */
+    padding: 10px;
+    /* Добавяне на padding */
+    border: 1px solid #99ccff;
+    /* Светла рамка */
+    border-radius: 5px;
+    /* Леко заоблени ъгли */
+    box-sizing: border-box;
+    /* Включва padding и border в ширината */
+    background-color: #f2faff;
+    /* Леко синкав цвят за полетата */
+}
+
+
+/* Стилове за бутона за изпращане */
+
+.form-user-settings input[type="submit"] {
+    background-color: #007bff;
+    /* Син бутон за формата */
+    color: white;
+    /* Бял текст за бутона */
+    border: none;
+    /* Премахване на рамката на бутона */
+    border-radius: 5px;
+    /* Заоблени ъгли */
+    padding: 10px 15px;
+    /* Добавяне на padding */
+    cursor: pointer;
+    /* Промяна на курсора при hover */
+    transition: background-color 0.3s;
+    /* Плавен преход при hover */
+}
+
+.form-user-settings input[type="submit"]:hover {
+    background-color: #0056b3;
+    /* По-тъмен син при hover за бутона */
+}

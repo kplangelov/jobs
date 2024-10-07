@@ -1,0 +1,79 @@
+/* Стилове за контейнера на job формата */
+
+.job-add-form-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #e6f7ff;
+    /* Светло син фон за тази форма */
+    border: 2px solid #0099cc;
+    /* Синя рамка за уникалност */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Стилове за заглавията на формата */
+
+.job-add-form-container li {
+    list-style-type: none;
+    /* Премахване на точки от списъка */
+    margin-bottom: 10px;
+    /* Разстояние между елементите */
+}
+
+
+/* Уникални стилове за бутона за изпращане */
+
+.job-add-form-container input[type="submit"] {
+    background-color: #007bff;
+    /* Син бутон за тази форма */
+    color: white;
+    /* Бял текст за бутона */
+    border: none;
+    /* Премахване на рамката на бутона */
+    border-radius: 5px;
+    /* Заоблени ъгли */
+    padding: 10px 15px;
+    /* Добавяне на padding */
+    cursor: pointer;
+    /* Промяна на курсора при hover */
+    transition: background-color 0.3s;
+    /* Плавен преход при hover */
+}
+
+.job-add-form-container input[type="submit"]:hover {
+    background-color: #0056b3;
+    /* По-тъмен син при hover за бутона */
+}
+
+
+/* Стилове за input и textarea елементите */
+
+.job-add-form-container input[type="text"],
+.job-add-form-container textarea {
+    width: 100%;
+    /* Ширина на 100% */
+    background-color: #f2faff;
+    /* Леко синкав цвят за полетата в тази форма */
+    border: 1px solid #99ccff;
+    /* Светла рамка */
+    padding: 10px;
+    /* Добавяне на padding */
+    border-radius: 5px;
+    /* Леко заоблени ъгли */
+    box-sizing: border-box;
+    /* Включва padding и border в ширината */
+}
+
+
+/* Увеличаване на размера на textarea */
+
+.job-add-form-container textarea {
+    height: 150px;
+    /* Височина на textarea */
+    resize: vertical;
+    /* Позволява вертикално променяне на размера */
+    background-color: #e0f7fa;
+    /* По-приятен фон */
+}

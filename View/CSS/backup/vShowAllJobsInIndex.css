@@ -1,0 +1,140 @@
+/* Основен стил за секцията с обяви */
+
+.job-card-container {
+    padding: 20px;
+    background-color: #1e1e1e;
+    /* Тъмен фон */
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    /* По-изразен shadow */
+    margin-top: 20px;
+    /* Отстояние от горната част */
+}
+
+
+/* Стил за всяка обява */
+
+.job-card {
+    background-color: #2c2c2e;
+    /* Тъмен фон за обявата */
+    padding: 20px;
+    margin: 15px 0;
+    border: 1px solid #444;
+    /* По-тъмен контур */
+    border-radius: 8px;
+    /* Заоблени ръбове */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Анимации за hover */
+    position: relative;
+    /* За по-добро позициониране на ефектите */
+}
+
+.job-card:hover {
+    transform: translateY(-2px);
+    /* Лека анимация нагоре */
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+    /* По-изразен shadow при hover */
+}
+
+
+/* Заглавие на обявата */
+
+.job-title {
+    font-size: 1.6em;
+    color: #e0e0e0;
+    /* Светлосив текст за заглавието */
+    margin: 0 0 10px 0;
+    font-weight: bold;
+    /* Удебелено заглавие */
+}
+
+
+/* Номер на обявата */
+
+.job-id {
+    font-size: 0.9em;
+    color: #b0b0b0;
+    /* Светло сив цвят за допълнителна информация */
+    margin-bottom: 5px;
+    /* Отстояние под номера */
+}
+
+
+/* Добавен от */
+
+.job-author {
+    font-size: 0.9em;
+    color: #95c3d4;
+    /* По-светъл син цвят за акцент */
+    margin-bottom: 10px;
+    /* Отстояние под автора */
+}
+
+
+/* Дата на създаване на обявата */
+
+.job-created-on-date {
+    font-size: 0.9em;
+    color: #aaa;
+    /* Светлосив цвят за датата */
+    margin-bottom: 10px;
+    /* Отстояние под датата */
+}
+
+
+/* Стил за текста на обявата */
+
+.job-description {
+    font-size: 1em;
+    color: #d0d0d0;
+    /* Светло сив текст за описание */
+    margin: 10px 0;
+    /* Отстояние около описанието */
+}
+
+
+/* Стил за бутона на обявата */
+
+.apply-button {
+    background-color: #2c3e50;
+    /* Тъмен син фон за бутона */
+    color: white;
+    /* Текстът на бутона */
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    /* Добавяне на анимация за цвета на текста */
+    text-align: center;
+    /* Центрирано текстово подравняване */
+}
+
+.apply-button:hover {
+    background-color: #34495e;
+    /* По-тъмен син при hover */
+    color: #ffffff;
+    /* Запазване на белия текст при hover */
+}
+
+
+/* Допълнителен стил за активиране на фокус */
+
+.apply-button:focus {
+    outline: none;
+    /* Премахване на стандартния фокусен контур */
+    box-shadow: 0 0 0 2px rgba(44, 62, 80, 0.5);
+    /* Добавяне на мек контур при фокус */
+}
+
+
+/* Стил за когато няма обяви */
+
+.no-jobs-message {
+    font-size: 1.2em;
+    color: #e74c3c;
+    /* Червен цвят за предупреждение */
+    text-align: center;
+    padding: 20px;
+}

@@ -2,11 +2,11 @@
     <h2 class="h3">Registration</h2>
     <form method="POST" action="">
         <div class="form-check mt-3">
-            <input type="radio" class="form-check-input" name="role" id="radio1" value="2">
+            <input type="radio" class="form-check-input" name="role" id="radio1" value="3">
             <label class="form-check-label" for="radio1">User</label>
         </div>
         <div class="form-check">
-            <input type="radio" class="form-check-input" name="role" id="radio2" value="3">
+            <input type="radio" class="form-check-input" name="role" id="radio2" value="4">
             <label class="form-check-label" for="radio2">Company</label>
         </div>
         <label for="mail" class="form-label m-2 fw-bold">Mail adress:</label>
