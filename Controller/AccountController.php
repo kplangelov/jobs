@@ -39,7 +39,7 @@ class AccountController
             $role = $_POST['role'];
             $errors = [];
 
-            if ($this->accModel->mIsAccExist($mail)) {
+            if ($this->mailValidation($mail) && $this->accModel->mIsAccExist($mail)) { //if email is valid and user exist in db
                 $errors['mail_exist'] = 'This email is already registered.';
                 return $errors;
             }
