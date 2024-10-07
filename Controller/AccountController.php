@@ -17,11 +17,13 @@ class AccountController
         switch ($role_id) {
             case 1:
                 return 'Guest';
-            case 2:
-                return 'User';
+            case 2: 
+                return 'Account';
             case 3:
-                return 'Company';
+                return 'User';
             case 4:
+                return 'Company';
+            case 5:
                 return 'Admin';
             default:
                 return false;
@@ -56,7 +58,7 @@ class AccountController
                 $errors['pass_not_match'] = 'Both password not match.';
             }
 
-            if ($role != 2 && $role != 3) {
+            if ($role != 3 && $role != 4) {
                 $errors['role'] = 'Please choose correct role.';
             }
 
@@ -85,7 +87,7 @@ class AccountController
 
     }
 
-    public function isUserLoggedIn()
+    public function isAccLoggedIn()
     {
 
         $_SESSION['acc_id'] = (int) $_SESSION['acc_id'];
