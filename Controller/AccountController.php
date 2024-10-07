@@ -39,10 +39,15 @@ class AccountController
             $role = $_POST['role'];
             $errors = [];
 
+            if ($this->accModel->mIsAccExist($mail)) {
+                $errors['mail_exist'] = 'This email is already registered.';
+                return $errors;
+            }
+            // need more validations
             if (!$this->mailValidation($mail)) {
                 $errors['mail'] = 'Invalid email adress';
             }
-            // need more validations
+
             if (strlen($pass) < 6) {
                 $errors['pass'] = 'Password is too short.';
             }
@@ -112,24 +117,11 @@ class AccountController
         return false;
     }
 
-    public function userSessionValidation()
-    {
-        if (empty($_SESSION['acc_id']) || $_SESSION['acc_id'] < 1) {
-            return false;
-        }
-
-        if (is_numeric($_SESSION['acc_id'])) {
-            return true;
-        }
-
-        return false;
-    }
-
     public function updateUserData()
     {
 
 
-        if ($_SERVER['REQUEST_METHOD'] == "POST" && $_POST['settings_clicked'] === "1" && $this->userSessionValidation()) {
+        if ($_SERVER['REQUEST_METHOD'] == "POST" && $_POST['settings_clicked'] === "1") {
 
             $user_id = (int) $_SESSION['acc_id'];
             $first_name = trim($_POST['first_name']);
