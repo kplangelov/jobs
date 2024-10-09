@@ -1,1 +1,5 @@
-ONLY FOR COMPANY.
+<?php 
+
+$compCntrl = new CompanyController();
+
+$compCntrl->uploadCompanyLogo();
