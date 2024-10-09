@@ -5,11 +5,16 @@ class AccountController
 
     private $logFile;
     private $accModel;
+    private $compModel;
+    private $userModel;
 
     public function __construct()
     {
         $this->logFile = new FileController();
         $this->accModel = new AccountModel();
+        $this->userModel = new UserModel();
+        $this->compModel = new CompanyModel();
+        
     }
 
     public function getUserRole($role_id)
@@ -17,7 +22,7 @@ class AccountController
         switch ($role_id) {
             case 1:
                 return 'Guest';
-            case 2: 
+            case 2:
                 return 'Account';
             case 3:
                 return 'User';
@@ -66,13 +71,31 @@ class AccountController
                 return $errors;
             }
             // need crypting HASH
-            $result = $this->accModel->mCreateAccount($mail, $pass, $role);
+            $accID = $this->accModel->mCreateAccount($mail, $pass, $role); 
 
-            if ($result) {
-                return [];
+            if ($accID) {
+
+                $acc_arr = $this->getDataForAcc($accID);
+
+                if($acc_arr && $acc_arr['role'] == 3) //user
+                {
+                    $result = $this->userModel->mCreateUser($accID);
+                    $result ? $result = [] : $result = ['Error to add you as user. Please contact an admin.'];
+                    return $result;
+                }
+                
+                if($acc_arr && $acc_arr['role'] == 4) //company
+                {
+                    $result = $this->compModel->mCreateAccCompany($accID);
+                    $result ? $result = [] : $result = ['Error to add you as company. Please contact an admin.'];
+                    return $result;
+                }
+                
+                $errors['ACC_BUT_ERR'] = 'The account is created, but not as company or user. Please contact an admin.';
+                return $errors;
             }
 
-            $errors['SQL_ERR'] = 'The job is not added due to SQL Error.';
+            $errors['SQL_ERR'] = 'The account is not added due to SQL Error.';
             return $errors;
         }
     }
