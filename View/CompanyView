@@ -1,0 +1,31 @@
+<?php 
+
+
+
+class CompanyView {
+
+    public $companyCntrl;
+
+    public function __construct() {
+        $this->companyCntrl = new CompanyController();
+    }
+
+    public function vUploadCompanyLogo() {
+        $fileArr = $this->companyCntrl->uploadCompanyLogo();
+
+        if(empty($fileArr))
+        {
+            echo 'success';
+        }
+        else 
+        {
+            foreach($fileArr as $key => $value) {   
+                echo $value.'<br>';
+            }
+        }
+
+        includeForm(formName: 'form_company_logo_upload.php');
+
+    }
+
+}
